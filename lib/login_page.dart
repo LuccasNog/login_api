@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
         body: Form(
       key: _formkey,
       child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.fromLTRB(20, 220, 20, 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -104,6 +104,9 @@ class _LoginPageState extends State<LoginPage> {
       'password': _passwordController.text
     });
     if (response.statusCode == 200) {
+      //metodo para salvar o token no servidor
+      await sharedPreferences.setString(
+          'token', "Token ${jsonDecode(response.body)['token']}");
       //retornando token
       print(jsonDecode(response.body)['token']);
       return true;

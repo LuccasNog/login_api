@@ -107,8 +107,8 @@ class _LoginPageState extends State<LoginPage> {
       //metodo para salvar o token no servidor
       await sharedPreferences.setString(
           'token', "Token ${jsonDecode(response.body)['token']}");
-      //retornando token
-      print(jsonDecode(response.body)['token']);
+      //Retornando o token em uma string
+
       return true;
     } else {
       print(jsonDecode(response.body));

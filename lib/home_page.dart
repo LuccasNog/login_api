@@ -11,9 +11,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('HomePage'),
-      ),
+      body: Column(
+        children: [
+          TextButton(onPressed: (){}, child: Text('Sair'))
+        ],
+      )
     );
   }
 }
